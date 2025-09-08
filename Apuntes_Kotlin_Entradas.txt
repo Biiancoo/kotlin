@@ -1,0 +1,87 @@
+📘 Apuntes de Kotlin - Gestión de Entradas
+
+1. Clases y Herencia en Kotlin
+
+-   open class: permite que una clase pueda heredarse.
+-   Herencia: se utiliza con : después del nombre de la clase.
+-   override: sirve para sobrescribir métodos de la clase padre.
+
+Ejemplo:
+
+    open class Entrada(val id: Int, val precio: Double) {
+        open fun mostrarDetalle() {
+            println("Entrada ID: $id, Precio: $$precio")
+        }
+    }
+
+    class EntradaGeneral(id: Int, precio: Double) : Entrada(id, precio) {
+        override fun mostrarDetalle() {
+            println("Entrada General -> ID: $id, Precio: $$precio")
+        }
+    }
+
+------------------------------------------------------------------------
+
+2. Listas y Bucles
+
+-   Listas: val lista = listOf(obj1, obj2, obj3)
+-   for: recorre listas o rangos.
+-   if: estructura condicional.
+-   when: similar a switch en otros lenguajes.
+
+Ejemplo:
+
+    val entradas = listOf(EntradaGeneral(1, 50.0), EntradaVIP(2, 120.0, "Beneficios"))
+    for (entrada in entradas) {
+        entrada.mostrarDetalle()
+    }
+
+------------------------------------------------------------------------
+
+3. Sealed Class (Clases Selladas)
+
+-   Se usan para representar un conjunto limitado de estados.
+-   Garantizan que todos los casos se manejen en un when.
+
+Ejemplo:
+
+    sealed class EstadoValidacion {
+        object Validando : EstadoValidacion()
+        data class Valida(val entrada: Entrada) : EstadoValidacion()
+        data class NoValida(val mensajeError: String) : EstadoValidacion()
+    }
+
+------------------------------------------------------------------------
+
+4. Corrutinas Básicas
+
+-   runBlocking: permite ejecutar código suspendido en main.
+-   suspend fun: función que puede usar delay u otras corrutinas.
+-   delay(ms): pausa simulada para procesos asincrónicos.
+
+Ejemplo:
+
+    suspend fun validarEntrada(id: Int, entradas: List<Entrada>): EstadoValidacion {
+        delay(2000) // simula validación
+        val entradaEncontrada = entradas.find { it.id == id }
+        return if (entradaEncontrada != null) {
+            EstadoValidacion.Valida(entradaEncontrada)
+        } else {
+            EstadoValidacion.NoValida("No se encontró la entrada con ID $id")
+        }
+    }
+
+------------------------------------------------------------------------
+
+5. Ejemplo Completo - Flujo
+
+1.  Crear lista de entradas.
+2.  Recorrer e imprimir detalles.
+3.  Calcular ingreso total con for.
+4.  Contar entradas VIP con if.
+5.  Validar entrada con corrutinas y mostrar resultado con when.
+
+------------------------------------------------------------------------
+
+✅ Consejo: Usa println para imprimir mensajes claros y prueba siempre
+con diferentes IDs en la validación.
