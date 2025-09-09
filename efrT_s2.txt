@@ -1,0 +1,430 @@
+
+
+************************************************************
+*               PARTE 1: LOGICA Y FUNDAMENTOS              *
+************************************************************
+
+>> `val` vs `var` (Variables)
+   ----------------------------
+   - `val` (Valor): Es una caja con algo adentro que NO PUEDES CAMBIAR una vez
+     que lo pones. Como tu fecha de nacimiento. Se usa para valores fijos.
+   - `var` (Variable): Es una caja donde PUEDES CAMBIAR el contenido cuando
+     quieras. Como tu edad. Se usa para valores que pueden variar.
+
+
+>> Tipos de Datos (Que guardas en las cajas)
+   ------------------------------------------
+   - `String`: Para guardar TEXTO (palabras, frases). Siempre va entre comillas.
+   - `Int`: Para guardar NUMEROS ENTEROS, sin decimales (10, -5, 1000).
+   - `Double` o `Float`: Para guardar NUMEROS CON DECIMALES (9.99, 3.1416).
+   - `Boolean`: Solo puede ser `true` (verdadero) o `false` (falso). Es como
+     un interruptor de luz (encendido o apagado).
+
+
+>> Operadores (Herramientas para trabajar con datos)
+   -------------------------------------------------
+   - Aritmeticos (`+`, `-`, `*`, `/`): Para hacer matematicas basicas.
+   - De Comparacion (`==`, `!=`, `>`, `<`): Para hacer preguntas y comparar dos valores.
+     * `==` pregunta: "Son iguales?".
+     * `!=` pregunta: "Son diferentes?".
+   - Logicos (`&&`, `||`, `!`): Para combinar preguntas de verdadero/falso.
+     * `&&` (Y): Exige que AMBAS condiciones sean verdaderas.
+     * `||` (O): Le basta con que AL MENOS UNA condicion sea verdadera.
+     * `!` (NO): Invierte el resultado (lo verdadero lo hace falso y viceversa).
+
+
+>> Estructuras de Control (Para tomar decisiones y repetir tareas)
+   ---------------------------------------------------------------
+   - `if / else` (Si / Si no): El tomador de decisiones basico. "Si esta condicion
+     es verdadera, haz esto. Si no, haz esto otro".
+   - `when` (Cuando): Como un `if` con superpoderes. Te permite elegir entre
+     MUCHAS opciones de forma limpia. "Cuando el valor sea 1, haz esto. Cuando
+     sea 2, haz esto otro...".
+   - `for` (Bucle "Para"): Para repetir una accion un numero exacto de veces o para
+     cada elemento de una lista. "Para cada alumno en la lista, llama su nombre".
+   - `while` (Bucle "Mientras"): Para repetir una accion MIENTRAS una condicion
+     siga siendo verdadera. "Mientras la olla no hierva, sigue removiendo".
+
+
+>> Funciones
+   ----------
+   - Que son: Son como "recetas de cocina" o mini-programas. Les das "ingredientes"
+     (parametros) y realizan una tarea especifica. Sirven para organizar el codigo
+     y no repetir las mismas instrucciones una y otra vez.
+
+
+************************************************************
+*        PARTE 2: PROGRAMACION ORIENTADA A OBJETOS (POO)   *
+************************************************************
+
+>> Conceptos Base
+   ---------------
+   - Clase: Es el PLANO o la plantilla para crear algo. Define que caracteristicas
+     y que acciones puede tener.
+   - Objeto: Es la CONSTRUCCION REAL hecha a partir del plano. Puedes crear
+     muchos objetos de la misma clase.
+   - Propiedad: Es una CARACTERISTICA o un dato de un objeto (ej: nombre, edad).
+   - Metodo: Es una ACCION que un objeto puede realizar (ej: ladrar(), comer()).
+
+
+>> Los 4 Pilares de la POO
+   -------------------------
+   - Encapsulacion: Es la idea de AGRUPAR las propiedades y metodos de un objeto
+     y PROTEGER su interior. No necesitas saber como funciona el motor para conducir.
+   - Herencia: Permite que una clase "hija" HEREDE propiedades y metodos de una
+     clase "padre". Sirve para reutilizar codigo.
+   - Polimorfismo: Significa "muchas formas". Permite que objetos de diferentes
+     clases sean tratados de la misma manera si tienen un ancestro en comun.
+     Puedes pedir a un Perro y a un Gato que "hagan un sonido", y cada uno lo hara
+     a su manera.
+   - Abstraccion: Se trata de OCULTAR LA COMPLEJIDAD y mostrar solo lo esencial.
+     * Clase Abstracta: Es un plano INCOMPLETO. Define ideas generales que sus
+       hijos deben completar.
+     * Interfaz: Es como un CONTRATO. Define un conjunto de acciones que una clase
+       se compromete a realizar, pero no dice como.
+
+
+************************************************************
+*                  PARTE 3: SIMBOLOS CLAVE                 *
+************************************************************
+
+- `:` (Dos puntos): Se usa para decir "es de tipo" (ej: `nombre: String`).
+  Tambien significa "hereda de" (ej: `class Gato : Animal`).
+
+- `.` (Punto): Es el conector. Se usa para acceder a una propiedad o llamar a
+  un metodo de un objeto (ej: `miPerro.nombre` o `miPerro.ladrar()`).
+
+- `?` (Interrogacion): Es una senial de "cuidado, esto podria ser nulo".
+  Se anade a un tipo para indicar que una variable puede no tener ningun
+  valor (`null`). Es clave para evitar errores.
+
+
+
+************************************************************
+*           PARTE 1: LAS PIEZAS FUNDAMENTALES              *
+*                    (El Kit de Inicio)                    *
+************************************************************
+
+>> Variables (`val` vs `var`): Cajas para Guardar Informacion
+   ----------------------------------------------------------
+   - Para que sirven: Para almacenar datos que tu programa necesita recordar.
+   - Como se hace:
+     * `val` (valor): Es una "caja sellada". Una vez pones algo, NUNCA mas se puede cambiar.
+       Es la opcion mas segura y la que debes preferir.
+     * `var` (variable): Es una "caja reutilizable". Puedes CAMBIAR su contenido
+       tantas veces como necesites.
+
+
+>> Control de Flujo (`if`, `when`, `for`, `while`): El Cerebro del Programa
+   -------------------------------------------------------------------------
+   - Para que sirven: Para tomar decisiones y repetir tareas, dando a tu codigo
+     la capacidad de reaccionar y trabajar de forma autonoma.
+   - Como se hace:
+     * `if` (Si...): El tomador de decisiones binario. "Si se cumple A, haz esto; si no, haz B".
+     * `when` (Cuando...): El selector multiple. Evalua una situacion y elige
+       el camino correcto entre muchas opciones. Es un `if` mas organizado.
+     * `for` (Para cada...): El trabajador repetitivo. Ejecuta una accion para
+       CADA elemento de una coleccion, de principio a fin.
+     * `while` (Mientras...): El vigilante condicional. Repite una accion
+       MIENTRAS una condicion siga siendo verdadera.
+
+
+************************************************************
+*        PARTE 2: PROGRAMACION ORIENTADA A OBJETOS         *
+*              (Construyendo Tus Propias Ideas)            *
+************************************************************
+
+>> Clases y Objetos: Planos y Construcciones
+   -------------------------------------------
+   - Para que sirven: Para crear tus propios conceptos y modelos del mundo real
+     (un Usuario, un Pedido, un Evento) dentro de tu codigo.
+   - Como se hace:
+     * Clase: Es el PLANO donde disenias las caracteristicas (propiedades)
+       y las acciones (metodos) de tu concepto.
+     * Objeto: Es la CONSTRUCCION REAL que creas a partir de ese plano.
+
+
+>> Herencia (`open` y `:`): Reutilizar y Especializar
+   ----------------------------------------------------
+   - Para que sirven: Para que una clase "hija" reciba todas las caracteristicas
+     de una clase "padre", evitando repetir codigo.
+   - Como se hace: Marcas una clase como `open` para permitir que hereden de ella.
+     La clase hija usa los dos puntos (`:`) para indicar de quien hereda.
+
+
+>> Polimorfismo (`override`): Misma Orden, Diferente Ejecucion
+   -------------------------------------------------------------
+   - Para que sirven: Para que objetos de diferentes tipos especializados puedan
+     responder a la misma instruccion de su propia manera unica.
+   - Como se hace: Defnes una accion base en el padre (`open`). En cada hija,
+     usas `override` para darle una version personalizada de esa accion.
+
+
+************************************************************
+*             PARTE 3: HERRAMIENTAS AVANZADAS              *
+*              (Manejando la Complejidad)                  *
+************************************************************
+
+>> Colecciones (`List`): Contenedores Inteligentes
+   -------------------------------------------------
+   - Para que sirven: Para gestionar grupos de objetos de forma potente y sencilla.
+   - Como se hace: En lugar de recorrer una lista a mano, usas sus funciones
+     integradas para analizarla al instante: `.filter` (para encontrar),
+     `.count` (para contar), o `.sumOf` (para sumar).
+
+
+>> Corrutinas (`suspend fun`): Trabajadores en Segundo Plano
+   ----------------------------------------------------------
+   - Para que sirven: Para ejecutar tareas largas (como descargar un archivo)
+     SIN CONGELAR la aplicacion. Mantienen la fluidez.
+   - Como se hace: Marcas la funcion lenta con `suspend` (la haces "pausable")
+     y la ejecutas en un entorno que gestiona esas pausas de forma inteligente.
+
+
+>> Clases Selladas (`sealed class`): Resultados Predecibles y Seguros
+   -------------------------------------------------------------------
+   - Para que sirven: Para representar situaciones con un numero FIJO de resultados
+     posibles (ej: Cargando, Exito, Error).
+   - Como se hace: Creas una `sealed class` y defines dentro cada estado. Al usar
+     `when` para comprobar el resultado, Kotlin te OBLIGA a manejar todos los casos,
+     haciendo tu codigo extremadamente robusto.
+
+============================================================
+||                       FIN DEL TORPEDO                    ||
+============================================================
+
+
+
+
+📘 APUNTES DE KOTLIN - RESUMEN GENERAL
+
+──────────────────────────────
+1. PUNTO DE ENTRADA
+──────────────────────────────
+fun main() {
+    println("Hola Kotlin!")
+}
+
+- main: función principal de entrada.
+- println: imprime en consola con salto de línea.
+- print: imprime en consola sin salto de línea.
+
+──────────────────────────────
+2. VARIABLES Y TIPOS
+──────────────────────────────
+val nombre = "Juan"   // inmutable
+var edad = 30         // mutable
+val altura: Double = 1.75
+
+Tipos básicos: Int, Long, Float, Double, Boolean, Char, String, Array
+
+──────────────────────────────
+3. COMENTARIOS
+──────────────────────────────
+// Esto es un comentario de una línea
+/* Esto es
+   un comentario
+   de varias líneas */
+
+──────────────────────────────
+4. CADENAS
+──────────────────────────────
+val a = 10
+println("El valor de a es $a")
+println("El doble es ${a*2}")
+
+──────────────────────────────
+5. CONTROL DE FLUJO
+──────────────────────────────
+// IF - ELSE
+if (a > 5) {
+    println("Mayor que 5")
+} else {
+    println("Menor o igual a 5")
+}
+
+// WHEN
+when (a) {
+    1 -> println("Uno")
+    2,3 -> println("Dos o Tres")
+    in 4..10 -> println("Entre 4 y 10")
+    else -> println("Otro número")
+}
+
+// BUCLES
+for (i in 1..5) println(i)
+while (edad > 0) {
+    println(edad)
+    edad--
+}
+
+──────────────────────────────
+6. FUNCIONES
+──────────────────────────────
+fun suma(x: Int, y: Int): Int {
+    return x + y
+}
+
+fun resta(x: Int, y: Int) = x - y
+
+fun mostrarSaludo(nombre: String): Unit {
+    println("Hola $nombre")
+}
+
+──────────────────────────────
+7. NULOS Y SEGURIDAD
+──────────────────────────────
+val nombre: String? = null
+if (nombre != null) println(nombre.length)
+
+// Operador Elvis
+val longitud = nombre?.length ?: 0
+
+──────────────────────────────
+8. CLASES Y OBJETOS
+──────────────────────────────
+open class Persona(val nombre: String) {
+    open fun saludar() {
+        println("Hola soy $nombre")
+    }
+}
+
+class Estudiante(nombre: String, val carrera: String): Persona(nombre) {
+    override fun saludar() {
+        println("Soy $nombre y estudio $carrera")
+    }
+}
+
+val p = Estudiante("Ana", "Kotlin")
+p.saludar()
+
+──────────────────────────────
+9. CLASES SELLADAS (Sealed)
+──────────────────────────────
+sealed class Estado {
+    object Cargando: Estado()
+    data class Exito(val data: String): Estado()
+    data class Error(val mensaje: String): Estado()
+}
+
+fun manejarEstado(estado: Estado) {
+    when(estado) {
+        is Estado.Cargando -> println("Cargando...")
+        is Estado.Exito -> println("Exito: ${estado.data}")
+        is Estado.Error -> println("Error: ${estado.mensaje}")
+    }
+}
+
+──────────────────────────────
+10. CORRUTINAS
+──────────────────────────────
+import kotlinx.coroutines.*
+
+fun main() = runBlocking {
+    launch {
+        delay(1000)
+        println("Tarea en corrutina")
+    }
+    println("Tarea principal")
+}
+
+──────────────────────────────
+✅ CONSEJOS
+──────────────────────────────
+- Usa `val` por defecto, `var` solo cuando necesites cambiar el valor.
+- Kotlin evita NullPointerException con tipos nulos seguros (?).
+- `when` es más flexible que switch en otros lenguajes.
+- Practica con corrutinas para procesos asincrónicos.
+
+
+
+
+
+listas.size -- saber el largo de la lista
+lista[0] -- imprime la variable que se encuentra en esa posicion
+lista.first() -- imprime el primero objeto de una lista
+
+
+LISTAS INMUTABLES
+val numeros = listOf(1, 2, 3, 4)
+println(numeros[0])   // 1
+println(numeros.size) // 4
+
+
+LISTAS MUTABLES
+val nombres = mutableListOf("Ana", "Luis")
+nombres.add("Pedro")      // agregar
+nombres.remove("Ana")     // eliminar
+nombres[0] = "María"      // modificar
+println(nombres)          // [María, Pedro]
+
+
+RECORRIDO DE LISTAS
+val frutas = listOf("Manzana", "Banana", "Cereza")
+
+// con for
+for (fruta in frutas) {
+    println(fruta)
+}
+
+// con forEach
+frutas.forEach { println(it) }
+
+// con índices
+for (i in frutas.indices) {
+    println("Fruta ${i+1}: ${frutas[i]}")
+}
+
+
+FUNCION ACIONCRONICA
+suspend = la función puede suspenderse.
+
+delay = pausa sin bloquear.
+
+runBlocking = permite ejecutar corrutinas en main.
+
+Usamos sealed class para modelar los distintos estados de validación.
+
+la sintaxis es asi(suspend fun miFuncion(){ println(" Validando entrada con ID $id...")
+    delay(2000) // ⏳ simula 2 segundos de espera
+    val entradaEncontrada = entradas.find { it.id == id }
+    return if (entradaEncontrada != null) {
+        EstadoValidacion.Valida(entradaEncontrada) // ✔ encontrada
+    } else {
+        EstadoValidacion.NoValida("❌ No se encontró la entrada con ID $id")
+    }}) 
+
+después en el main iría asi (
+val resultado = validarEntrada(2,entradas){
+when (resultado) {
+        is EstadoValidacion.Validando -> println("⏳ Validando...")
+        is EstadoValidacion.Valida -> {
+            println("✔ Entrada válida:")
+            resultado.entrada.mostrarDetalle()
+        }
+        is EstadoValidacion.NoValida -> println(resultado.mensajeError)
+    }
+)
+
+OPERACIONES UTILES PARA LAS LISTAS
+val numeros = listOf(10, 20, 30, 40)
+
+println(numeros.sum())     // suma total
+println(numeros.max())     // máximo
+println(numeros.min())     // mínimo
+println(numeros.average()) // promedio
+
+val pares = numeros.filter { it % 2 == 0 }
+println(pares) // [10, 20, 30, 40]
+
+val dobles = numeros.map { it * 2 }
+println(dobles) // [20, 40, 60, 80]
+
+
+imports para las corrutinas
+
+	dependencies {implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+	}
+	import kotlinx.coroutines.delay
+	import kotlinx.coroutines.runBlocking
+
